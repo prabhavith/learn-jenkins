@@ -10,6 +10,9 @@ pipeline {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
+            options {
+                            timeout(time: 5, unit: 'SECONDS')
+                        }
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
