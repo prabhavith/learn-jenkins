@@ -2,4 +2,6 @@
 
 Stages
 
-Source code => compile/download dependencies => test cases => Build => Release => Deploy
+Source code => compile/download dependencies => unit test cases => Integration test cases => Build => Release => Deploy
+
+
