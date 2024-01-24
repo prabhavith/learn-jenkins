@@ -1,4 +1,3 @@
-import org.apache.groovy.parser.antlr4.GroovyParser
 
 //pipeline {
 //    agent { node { label 'workstation' } }
