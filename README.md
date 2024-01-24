@@ -1,4 +1,5 @@
 # learn-jenkins
 
+Stages
 
-rwf
+Source code => compile/download dependencies => test cases => Build => Release => Deploy
