@@ -1,33 +1,46 @@
+// check README.md file in git repo for more clarity.
 def call() {
-    pipeline {
-        //agent { node { label 'workstation' } }
-        agent any
-        stages {
+    node{
+        sh 'env'
+        if(BRANCH_NAME == "main") {
+            stage('code checkout') {
+                echo 'code checkout'
+            }
             stage('compile') {
-                steps {
-                    echo 'compile'
-                }
-            }
-            stage('Unit test cases') {
-                steps {
-                    echo 'unit test cases'
-                }
-            }
-            stage('Integration test cases') {
-                steps {
-                    echo 'Integration test cases'
-                }
+                echo 'compile'
             }
             stage('build') {
-                steps {
-                    echo 'build'
-                }
+                echo 'build'
             }
-            stage('release'){
-                steps{
-                    echo 'release'
-                }
+        }
+        else {
+            stage('code checkout') {
+                echo 'code checkout'
             }
+            stage('compile') {
+                echo 'compile'
+            }
+            stage('Unit test cases') {
+                echo 'unit test cases'
+            }
+        }
+        stage('code checkout') {
+            echo 'code checkout'
+        }
+        stage('compile') {
+            echo 'compile'
+        }
+        stage('Unit test cases') {
+            echo 'unit test cases'
+        }
+        stage('Integration test cases') {
+            echo 'Integration test cases'
+        }
+        stage('build') {
+            echo 'build'
+        }
+        stage('release'){
+            echo 'release'
         }
     }
 }
