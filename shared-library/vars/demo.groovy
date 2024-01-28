@@ -13,7 +13,7 @@ def call() {
                 echo 'build'
             }
         }
-        else {
+        else if(BRANCH_NAME ==~ PR.* ) {
             stage('code checkout') {
                 echo 'code checkout'
             }
@@ -36,7 +36,7 @@ def call() {
         stage('Integration test cases') {
             echo 'Integration test cases'
         }
-        stage('build') { build line
+        stage('build') {
             echo 'build'
         }
         stage('release'){
