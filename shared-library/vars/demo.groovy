@@ -36,11 +36,11 @@ def call() {
         stage('Integration test cases') {
             echo 'Integration test cases'
         }
-        stage('build') {
+        stage('build') { build line
             echo 'build'
         }
         stage('release'){
             echo 'release'
         }
     }
-}main line
+}
