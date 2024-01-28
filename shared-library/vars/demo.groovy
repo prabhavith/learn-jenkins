@@ -44,5 +44,3 @@ def call() {
         }
     }
 }
-
-main line
