@@ -2,7 +2,7 @@
 def call() {
     node {
         sh 'env'
-        if (BRANCH_NAME == "main") {
+        if (env.BRANCH_NAME == "main") {
             stage('code checkout') {
                 echo 'code checkout'
             }
@@ -12,7 +12,7 @@ def call() {
             stage('build') {
                 echo 'build'
             }
-        } else if (BRANCH_NAME ==~ "PR.*" ) {
+        } else if (env.BRANCH_NAME ==~ "PR.*" ) {
             stage('code checkout') {
                 echo 'code checkout'
             }
@@ -26,7 +26,7 @@ def call() {
                 echo 'Integration test cases'
             }
         }
-        else if (BRANCH_NAME ==~ "v..*") {
+        else if (env.BRANCH_NAME ==~ "v..*") {
             stage('code checkout') {
                 echo 'code checkout'
             }
